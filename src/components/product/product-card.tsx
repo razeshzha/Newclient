@@ -20,7 +20,7 @@ const ProductCard:React.FC<IProp> = ({product,wishlist=false}) => {
                     className='h-full w-full transition-all object-cover duration-300 hover:scale-[1.1]'
                     height={1000}
                     width={1000}
-                    src={ coverImage ? `${process.env.NEXT_PUBLIC_API_BASE_URL}${coverImage}` : '/product/product.webp'}
+                    src={ coverImage ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/${coverImage}` : '/product/product.webp'}
                     alt={name} />
             </div>
             <div className='p-3'>

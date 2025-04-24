@@ -5,7 +5,7 @@ import React, { useEffect } from 'react'
 import toast from 'react-hot-toast'
 import ImageSlider from './image-slider'
 import {ProductDetails} from './product-detail'
-import ReviewForm from '@/components/ui/review-form'
+import ReviewForm from '../../ui/review-form'
 import PageLoading from '@/components/ui/page-loading'
 import Reviews from '../review/reviews'
 interface IProp {
