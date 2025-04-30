@@ -12,7 +12,7 @@ const Header = () => {
         <div className='tracking-wider flex shadow justify-between items-center py-6 px-10'>
             {/* logo */}
             <div>
-                <p className='font-bold text-xl text-blue-500'>Brandname</p>
+                <p className='font-bold text-xl text-blue-500'>⚡ BrandName</p>
             </div>
             {/* center section  */}
             <div className='flex gap-5 text-lg'>

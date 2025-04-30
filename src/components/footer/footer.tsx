@@ -13,7 +13,7 @@ const Footer = () => {
 
         {/* Brand & Contact */}
         <div>
-          <h2 className="text-2xl font-bold text-blue-400">BrandName</h2>
+          <h2 className="text-2xl font-bold text-blue-400">⚡ BrandName</h2>
           <div className="mt-4 flex items-center gap-2">
             <FaPhoneAlt className="text-blue-300" />
             <span className="text-sm">+977-9807669785</span>
@@ -57,7 +57,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center mt-10 text-sm text-gray-400">
-        © {new Date().getFullYear()} BrandName. All rights reserved.
+        © {new Date().getFullYear()} ⚡ BrandName. All rights reserved.
       </div>
     </footer>
   )
