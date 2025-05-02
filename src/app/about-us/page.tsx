@@ -4,10 +4,10 @@ import React from 'react'
 const Page = () => {
   return (
     <div className='px-10 py-8'>
-      <h1 className='text-3xl font-semibold mb-4'>About Us</h1>
+      <h1 className='text-3xl font-semibold mb-4 text-pink-500'>About Us</h1>
       
       <section className="my-6">
-        <h2 className="text-2xl font-medium">Our Story</h2>
+        <h2 className="text-2xl font-medium text--">Our Story</h2>
         <p>We started in 2015 with a vision to bring high-quality and affordable products to the online marketplace...</p>
       </section>
       

@@ -20,10 +20,10 @@ const Hero = () => {
             <div className='absolute top-1/3  z-50 max-w-[700px] px-4 '>
                 {/* text */}
                 <div className='tracking-wider'>
-                    <h1 className='font-bold text-3xl mb-4'>
+                    <h1 className='font-bold text-3xl mb-4 text-blue-700'>
                         Discover your perfect style with just a click!
                     </h1>
-                    <p>
+                    <p className='text-green-500 font-bold text-xl'>
                         Unbeatable deals and the latest trends are waiting for you.
                         Whether you&apos;re looking to upgrade your wardrobe or find your new favorite item, everything you need is right here.
                         Don&apos;t miss out—exclusive offers and top-quality selections are just a click away. Shop smart and shop now to get

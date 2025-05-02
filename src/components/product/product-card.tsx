@@ -18,14 +18,31 @@ const ProductCard: React.FC<IProp> = ({ product, wishlist = false }) => {
   const { remove } = useWishlist()
   const { add: addToCart } = useCart()
 
+  const handleRemove = async () => {
+    try {
+      await remove.mutateAsync(_id)  // Using mutateAsync for better async control
+    } catch (err) {
+      console.error("Error removing from wishlist:", err)
+    }
+  }
+
+  const handleAddToCart = async () => {
+    try {
+      await addToCart.mutateAsync({ productId: _id, quantity: 1 })
+    } catch (err) {
+      console.error("Error adding to cart:", err)
+    }
+  }
+
   return (
     <div className='relative overflow-hidden tracking-wider border border-gray-300 w-fit rounded-md'>
       {/* Image */}
       <div className='h-50 w-60 aspect-square'>
         <Image
           className='h-full w-full transition-all object-cover duration-300 hover:scale-[1.1]'
-          height={1000}
-          width={1000}
+          layout="responsive"
+          width={500}
+          height={500}
           src={coverImage ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/${coverImage}` : '/product/product.webp'}
           alt={name}
         />
@@ -49,14 +66,16 @@ const ProductCard: React.FC<IProp> = ({ product, wishlist = false }) => {
         <>
           <div
             className='absolute top-2 right-2 z-50 w-fit h-fit cursor-pointer'
-            onClick={() => remove.mutate(_id)} // Remove from wishlist
+            onClick={handleRemove} // Remove from wishlist
+            aria-label="Remove from wishlist"
           >
             <GoTrash className='text-red-500' size={22} />
           </div>
 
           <button
-            onClick={() => addToCart.mutate({ productId: _id, quantity: 1 })} // Add to cart
+            onClick={handleAddToCart} // Add to cart
             className='w-full py-2 text-[14px] bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-200'
+            aria-label="Add to cart"
           >
             Add to Cart
           </button>
