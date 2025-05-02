@@ -1,16 +1,18 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import api from "@/axios/api.axios";
 
 export const getCart = async () => {
   try {
     const response = await api.get('/cart');
     return response.data;
-  } catch (error) {
-    throw new Error('Failed to fetch cart items');
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error('Failed to fetch cart items: ' + error.message);
+    } else {
+      throw new Error('Failed to fetch cart items: unknown error');
+    }
   }
 };
 
-// ✅ Add this function and export it
 export const addToCart = async ({
   productId,
   quantity,
@@ -21,7 +23,11 @@ export const addToCart = async ({
   try {
     const response = await api.post('/cart', { productId, quantity });
     return response.data;
-  } catch (error: any) {
-    throw new Error(error?.response?.data?.message || 'Failed to add to cart');
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(error.message || 'Failed to add to cart');
+    } else {
+      throw new Error('Failed to add to cart: unknown error');
+    }
   }
 };
