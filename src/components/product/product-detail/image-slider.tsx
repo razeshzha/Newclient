@@ -4,8 +4,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image'
+import { IImage } from '@/interface/auth/product.interface';
 interface IProps {
-    images:string[]
+    images:IImage[]
 }
 
 const ImageSlider:React.FC<IProps> = ({images}) =>{
@@ -26,7 +27,7 @@ const ImageSlider:React.FC<IProps> = ({images}) =>{
             return(
                 <div className='w-[400px] h-[400px] rounded-md overflow-hidden shadow' key={index}>
                     <Image
-                    src={`${process.env.NEXT_PUBLIC_API_BASE_URL}/${image}`}
+                    src={image.path}
                     width={1000}
                     height={1000}
                     alt={'product detail image'}

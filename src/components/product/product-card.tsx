@@ -43,7 +43,7 @@ const ProductCard: React.FC<IProp> = ({ product, wishlist = false }) => {
           layout="responsive"
           width={500}
           height={500}
-          src={coverImage ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/${coverImage}` : '/product/product.webp'}
+          src={coverImage.path }
           alt={name}
         />
       </div>

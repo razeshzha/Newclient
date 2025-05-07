@@ -1,5 +1,7 @@
+// src/api/cart.ts
 import api from "@/axios/api.axios";
 
+// Get Cart Items
 export const getCart = async () => {
   try {
     const response = await api.get('/cart');
@@ -13,6 +15,7 @@ export const getCart = async () => {
   }
 };
 
+// Add to Cart
 export const addToCart = async ({
   productId,
   quantity,
@@ -21,7 +24,7 @@ export const addToCart = async ({
   quantity: number;
 }) => {
   try {
-    const response = await api.post('/cart', { productId, quantity });
+    const response = await api.post('/cart/add', { productId, quantity });
     return response.data;
   } catch (error: unknown) {
     if (error instanceof Error) {
