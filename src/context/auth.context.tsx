@@ -26,7 +26,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
 
     // Handle user data stored in localStorage
-    if (localUser) {
+    if (localUser && !user) {
       try {
         const parsedUser = JSON.parse(localUser);
         if (parsedUser) {
@@ -39,7 +39,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
 
     setMounted(true); // ✅ Ready to render safely
-  }, []);
+  }, [user]);
 
   const logout = () => {
     setUser(null);
