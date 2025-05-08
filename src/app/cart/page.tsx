@@ -1,7 +1,7 @@
  
 // src/app/cart/page.tsx
+import Cart from '@/components/cart/cart';
 import React from 'react';
-import Cart from '../../../client/src/app/cart/page';
 
 const Page = () => {
   return (
