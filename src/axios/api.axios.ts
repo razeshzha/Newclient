@@ -7,7 +7,7 @@ const getToken = () =>{
 
 const api = axios.create({
 	baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
-	timeout: 3000,
+	timeout: 10000,
 	// headers:{
 	// 	'Authorization':`BEARER ${getToken()}`
 	// }
